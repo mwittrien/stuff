@@ -5,7 +5,6 @@
 	var settings_cog = document.getElementById("settings_cog");
 	var settings_menu = document.getElementById("settings_menu");
 	var login_controls = document.getElementById("login_controls");
-	var login_input = document.getElementById("login_input");
 	var login_btn = document.getElementById("login_btn");
 	var logout_controls = document.getElementById("logout_controls");
 	var logout_btn = document.getElementById("logout_btn");
@@ -19,7 +18,7 @@
 		settings_menu.classList.toggle("closing");
 	});
 	login_btn.addEventListener("click", function (e) {
-		if (!login && login_input.value) socket.emit("loginReq", {pw:login_input.value});
+		if (!login) socket.emit("loginReq", {pw:login_input.value});
 	});
 	logout_btn.addEventListener("click", function (e) {
 		if (login) socket.emit("logoutReq", {login});
@@ -37,7 +36,6 @@
 		if (login) socket.emit("bingoData", {login, number:numbertile.getAttribute("number"), state:!numbertile.classList.contains("on")});
 	});
 	socket.on("inOutAuth", function (data) {
-		login_input.value = "";
 		if (data.login) {
 			login = data.login;
 			login_controls.style.setProperty("display", "none");
