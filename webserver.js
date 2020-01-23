@@ -48,12 +48,11 @@ io.sockets.on("connection", function (socket) {
 	socket.emit("bingoUpdate", {numbers, undo, redo});
 	socket.on("loginReq", function (data) {
 		if (login) socket.emit("showToast", {msg:"Bereits eingeloggt."});
-		else if (data.pw == "friendsbingo123") {
+		else {
 			login = btoa(Math.random()*10000) + btoa(Math.random()*10000);
 			socket.emit("inOutAuth", {login, footer:"", buttons:""});
 			socket.emit("showToast", {msg:"Login erfolgreich.", type:"success"});
 		}
-		else socket.emit("showToast", {msg:"Login fehlgeschlagen.", type:"error"});
 	});
 	socket.on("logoutReq", function (data) {
 		if (!login) socket.emit("showToast", {msg:"Bereits ausgeloggt."});
