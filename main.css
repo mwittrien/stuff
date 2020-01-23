@@ -103,32 +103,33 @@ body:before {
 	margin: auto;
 }
 #columns {
-	background-color: black;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
+	background: rgba(0, 0, 0, 0.7) url(../imgs/frame.png) center/106% 104% no-repeat;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
 }
 #columns .tile {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 }
 #columns .letter {
-	color: #C00;
-	font-weight: 700;
-	border-bottom: 1px solid #800;
+        color: rgba(222, 222, 222, 1);
+        font-weight: 1000;
+        border-bottom: 1px solid #AAA;
 }
 #columns .number {
-	color: #500;
-	transition: color 0.5s ease-in;
+        color: rgba(150, 150, 150, 0.5);
+        font-weight: 700;
+        transition: color 0.5s ease-in;
 }
 #columns .number.on {
-	color: #F00;
-	font-weight: 600;
+        color: rgba(255, 255, 255, 1);
+        font-weight: 850;
 }
 #footer {
-	background-color: black;
+	background: rgba(0, 0, 0, 0.7) url(../imgs/frame.png) center/107% 100% no-repeat;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
